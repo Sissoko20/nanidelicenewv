@@ -1,37 +1,11 @@
-#container {
-  text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
 .banner-title {
   font-family: 'cursive',sans-serif;
   font-size: 24px;
   text-transform: capitalize;
   margin-top: 14px;
   text-align: left;
-  color: white;
+  color: rgb(255, 255, 255);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
   div:first-child {
@@ -43,8 +17,65 @@
 }
 }
 ion-content {
-  --ion-background-color: radial-gradient(circle, #000000, #212905);
+  --ion-background-color: radial-gradient(circle, #212020, #000000);
 }
 .menulateral{
   color: white;
+}
+.iseg{
+ margin-top: 30px;
+}
+
+
+section {
+  display: table;
+  margin-top: 30px;
+  
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+
+  
+}
+.mat-icon.icon{
+ 
+}
+.button.btn{
+ 
+}
+
+.mat-mdc-fab.mat-primary, .mat-mdc-mini-fab.mat-primary{
+  --mdc-fab-container-color: #000000;
+  --mdc-fab-icon-color: #fff;
+  --mat-mdc-fab-color: #fff;
+}
+.circle-icon {
+  border-radius: 50%;
+  background-color: #f00; /* Couleur de fond de la rondelle */
+  color: #fff; /* Couleur de l'icône */
 }

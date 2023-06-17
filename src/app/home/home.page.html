@@ -14,5 +14,84 @@
     <div class="secondtext">en quelques clics</div>
   </ion-title>
   
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    
+    <ion-fab-button>
+      <!-- Icône du bouton --> 
+      <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+ 
+
+    <ion-segment class="ion-padding" class="iseg" [scrollable]="true" value="pizza" mode="md" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="pizza">
+        <ion-icon name="pizza" color="light"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="cake">
+        <ion-icon name="pizza" color="light"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="platsAfricains">
+        <ion-icon name="pin" color="light"></ion-icon>
+      </ion-segment-button>
+
+
+  </ion-segment>
+
+
+  <div class="flex" *ngIf="selectedSegment==='pizza'">
+
+    <ion-card *ngFor="let item of PizzaMenu | async" [routerLink]="['/details', item.id]">
+
+      <ion-img [src]="item.img"></ion-img>
+      <ion-card-header>
+
+        <ion-card-title>{{item.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button  expand="block" fill="clear" shape="round">
+
+          <ion-icon name="eye-outline"></ion-icon>
+          Voir
+        </ion-button>
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <div class="flex" *ngIf="selectedSegment==='cake'">
+    <ion-card *ngFor="let item of CakeMenu | async" [routerLink]="['/details-cake', item.id]">
+      <ion-img [src]="item.img"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{item.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="alarm"></ion-icon>
+        <ion-icon name="card"></ion-icon>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+
+
+  <div class="flex" *ngIf="selectedSegment==='platsAfricains'">
+    <ion-card *ngFor="let item of PlAfricainMenu | async " [routerLink]="['/details-plat-africains', item.id]">
+      <ion-img [src]="item.img"></ion-img>
+      <ion-card-header>
+
+        <ion-card-title>{{item.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="alarm"></ion-icon>
+        <ion-icon name="card"></ion-icon>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
 </ion-content>
 
