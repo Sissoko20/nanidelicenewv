@@ -14,17 +14,6 @@
     <div class="secondtext">en quelques clics</div>
   </ion-title>
   
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    
-    <ion-fab-button>
-      <!-- Icône du bouton --> 
-      <ion-icon name="home"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-
-
- 
 
     <ion-segment class="ion-padding" class="iseg" [scrollable]="true" value="pizza" mode="md" (ionChange)="segmentChanged($event)">
       <ion-segment-button value="pizza">
@@ -41,57 +30,65 @@
   </ion-segment>
 
 
-  <div class="flex" *ngIf="selectedSegment==='pizza'">
+  <ion-grid *ngIf="selectedSegment==='pizza'">
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of PizzaMenu | async" [routerLink]="['/details', item.id]">
+        <ion-card class="flex">
+          <ion-avatar>
+            <img [src]="item.img" alt="Article" />
+          </ion-avatar>
+          <ion-card-header>
+            <ion-card-title>{{ item.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+          
+            <p>Prix: {{ item.price }} €</p>
+            <!-- Autres informations sur l'article -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    <ion-card *ngFor="let item of PizzaMenu | async" [routerLink]="['/details', item.id]">
+  <ion-grid *ngIf="selectedSegment==='cake'">
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of CakeMenu | async" [routerLink]="['/details-cake', item.id]">
+        <ion-card >
+          <ion-avatar>
+            <img [src]="item.img" alt="Article" />
+          </ion-avatar>
+          <ion-card-header>
+            <ion-card-title>{{ item.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+          
+            <p>Prix: {{ item.price }} €</p>
+            <!-- Autres informations sur l'article -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-      <ion-img [src]="item.img"></ion-img>
-      <ion-card-header>
-
-        <ion-card-title>{{item.title}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-button  expand="block" fill="clear" shape="round">
-
-          <ion-icon name="eye-outline"></ion-icon>
-          Voir
-        </ion-button>
-        <ion-icon name="bookmark-outline"></ion-icon>
-      </ion-card-content>
-    </ion-card>
-
-  </div>
-
-  <div class="flex" *ngIf="selectedSegment==='cake'">
-    <ion-card *ngFor="let item of CakeMenu | async" [routerLink]="['/details-cake', item.id]">
-      <ion-img [src]="item.img"></ion-img>
-      <ion-card-header>
-        <ion-card-title>{{item.title}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-icon name="alarm"></ion-icon>
-        <ion-icon name="card"></ion-icon>
-      </ion-card-content>
-    </ion-card>
-
-  </div>
-
-
-
-  <div class="flex" *ngIf="selectedSegment==='platsAfricains'">
-    <ion-card *ngFor="let item of PlAfricainMenu | async " [routerLink]="['/details-plat-africains', item.id]">
-      <ion-img [src]="item.img"></ion-img>
-      <ion-card-header>
-
-        <ion-card-title>{{item.title}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-icon name="alarm"></ion-icon>
-        <ion-icon name="card"></ion-icon>
-      </ion-card-content>
-    </ion-card>
-  </div>
-
+  <ion-grid *ngIf="selectedSegment==='platsAfricains'">
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of PlAfricainMenu | async" [routerLink]="['/details-plat-africains', item.id]">
+        <ion-card >
+          <ion-avatar>
+            <img [src]="item.img" alt="Article" />
+          </ion-avatar>
+          <ion-card-header>
+            <ion-card-title>{{ item.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+          
+            <p>Prix: {{ item.price }} €</p>
+            <!-- Autres informations sur l'article -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
 

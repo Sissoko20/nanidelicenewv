@@ -55,27 +55,24 @@ section {
   flex-wrap: wrap;
 }
 
-.example-button-container {
-  display: flex;
-  justify-content: center;
-  width: 120px;
+ion-card{
+ 
+  ion-avatar{ 
+   
+    margin-left: 45px;
+    margin-bottom: 20px;
+    
+    img{
 
-  
+  }
 }
-.mat-icon.icon{
  
 }
-.button.btn{
+ion-card-header{
  
-}
+  ion-card-title{
+    
+    background-color: aliceblue; 
 
-.mat-mdc-fab.mat-primary, .mat-mdc-mini-fab.mat-primary{
-  --mdc-fab-container-color: #000000;
-  --mdc-fab-icon-color: #fff;
-  --mat-mdc-fab-color: #fff;
 }
-.circle-icon {
-  border-radius: 50%;
-  background-color: #f00; /* Couleur de fond de la rondelle */
-  color: #fff; /* Couleur de l'icône */
 }
